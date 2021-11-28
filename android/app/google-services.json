@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "314265135568",
+    "project_id": "chatappfcm-a1520",
+    "storage_bucket": "chatappfcm-a1520.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314265135568:android:5c930dde0c697f7ac831d5",
+        "android_client_info": {
+          "package_name": "com.chatappfcm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "314265135568-uo802g65jf4vd0u2mn7q7atl189ftn80.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5xxvfTXuMitBWQhhFYe9KgxPQlGirSgY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "314265135568-uo802g65jf4vd0u2mn7q7atl189ftn80.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
