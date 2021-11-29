@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {GiftedChat} from 'react-native-gifted-chat';
+import {launchImageLibrary} from 'react-native-image-picker';
 import axios from 'axios';
 
 import messaging from '@react-native-firebase/messaging';
@@ -74,6 +75,7 @@ const Messages = () => {
   );
 
   const onSend = useCallback((messages = []) => {
+    console.log(messages[0]);
     setMessages(previousMessages =>
       GiftedChat.append(previousMessages, messages),
     );
@@ -94,9 +96,67 @@ const Messages = () => {
     messaging().subscribeToTopic(DEFAULT_TOPIC);
   }, []);
 
+  const renderActions = useCallback(() => {
+    return (
+      <BorderlessButton
+        onPress={() => {
+          launchImageLibrary().then(({assets}) => {
+            const {uri, type, fileName} = assets[0];
+
+            setMessages(previousMessages => {
+              return GiftedChat.append(previousMessages, {
+                _id: makeid(24),
+                image: uri,
+                user: {
+                  _id: TEMP_ID,
+                },
+                createdAt: new Date(),
+              });
+            });
+
+            const form = new FormData();
+            form.append('image', {uri, type, name: fileName});
+            axios({
+              method: 'post',
+              url: `${ROOT_URL}/api/v1/image/upload`,
+              data: form,
+              headers: {'content-type': 'multipart/form-data'},
+            })
+              .then(function (response) {
+                axios
+                  .post(`${ROOT_URL}/api/v1/message/send`, {
+                    image: response.data.result.image_url,
+                    sender: TEMP_ID,
+                  })
+                  .catch(err => {
+                    console.log({axiosErr: err});
+                  });
+                //handle success
+                // console.log(response.data.result.image_url);
+              })
+              .catch(function (response) {
+                //handle error
+                console.log(response);
+              });
+          });
+        }}
+        style={{
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: 48,
+          height: 48,
+        }}>
+        <Text style={{fontSize: 32}}>+</Text>
+      </BorderlessButton>
+    );
+  }, []);
+
+  messages.forEach(m => console.log(m));
+
   return (
     <View style={styles.container}>
       <GiftedChat
+        renderActions={renderActions}
         messages={messages}
         onSend={messages => onSend(messages)}
         user={{
