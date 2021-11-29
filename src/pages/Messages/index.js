@@ -28,7 +28,7 @@ async function requestUserPermission() {
 
 const DEFAULT_TOPIC = 'default';
 
-const ROOT_URL = 'http://8bae-125-160-135-236.ngrok.io';
+const ROOT_URL = 'https://simple-chat-app-backend-99.herokuapp.com';
 
 function makeid(length) {
   var result = '';
@@ -78,10 +78,14 @@ const Messages = () => {
       GiftedChat.append(previousMessages, messages),
     );
 
-    axios.post(`${ROOT_URL}/api/v1/message/send`, {
-      message: messages[0].text,
-      sender: TEMP_ID,
-    });
+    axios
+      .post(`${ROOT_URL}/api/v1/message/send`, {
+        message: messages[0].text,
+        sender: TEMP_ID,
+      })
+      .catch(err => {
+        console.log({axiosErr: err});
+      });
   }, []);
 
   // console.log({messages});
@@ -98,6 +102,7 @@ const Messages = () => {
         user={{
           _id: TEMP_ID,
         }}
+        alwaysShowSend
       />
     </View>
   );
