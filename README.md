@@ -47,7 +47,7 @@ Repository Front-end Assignment 3 Mobile Computing
   **2. Failed to install the app. Make sure you have the android development environment set up..**
   
   <p align="justify">
-  Ini merupakan permasalahan yang paling sering terjadi dalam menjalankan aplikasi React Native. Error ini disebabkan oleh instalasi environment android di komputer kurang baik / tidak sesuai / tidak terdeteksi oleh komputer. Akibat dari eror ini ialah aplikasi gagal untuk di install di Emmulator atau di Handphone sungguhan. Cara mengatasinya adalah dengan membuat sebuah file baru bernama **local.properties**. Berikut adalah caranya :
+  Ini merupakan permasalahan yang paling sering terjadi dalam menjalankan aplikasi React Native. Error ini disebabkan oleh instalasi environment android di komputer kurang baik / tidak sesuai / tidak terdeteksi oleh komputer. Akibat dari eror ini ialah aplikasi gagal untuk di install di Emmulator atau di Handphone sungguhan. Cara mengatasinya adalah dengan membuat sebuah file baru bernama local.properties. Berikut adalah caranya :
   </p>
   
   ```
@@ -95,11 +95,9 @@ Repository Front-end Assignment 3 Mobile Computing
 
 <p align="center"> 
     <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhncgpGXcLsFiMWFdgzwlyZoK0BxHfLo0NVerpSrFzO9Nk-tvSMJZR9PgVkN2zmNGZCAkeAAFBqTxGiry9OIFGQ8ux2hMWtgPJXUhh_sfBRmtkTPtKNG2_OBPfZ_bM0g6AW6gLbt4IWEj42wMZh58ksQPZLOK0sRxubmPqhsY6y19tNhOyEv07fcGXL=w259-h560" align="center"></img>
-</p>
-
-<p align="center"> 
     <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhVlL7pb_lbZ0oLDEYDPVISiMf6ihnqutlNFy5Drw9IulpjMlYXBUp4U3BjV2Gfr9YZoyEuQ8dU06JQnlLq_GPoxbXP6XhvDvFXi7Ep6kvFGAYAhHi5EdQRCnMLWkKHUIU1_m3JHS09xCVugMJnnRvMjOgNJNkzjGmQDGFJ5uAOIaTdVx9X0IExA8Ac=w260-h564" align="center"></img>
 </p>
+
 
 ## Contributors ##
 
